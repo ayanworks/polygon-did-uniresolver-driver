@@ -1,6 +1,6 @@
 import express from "express"
 import * as dot from 'dotenv';
-import { resolveDID } from 'polygon-did-resolver';
+import { resolveDID } from '@ayanworks/polygon-did-resolver';
 
 dot.config();
 
@@ -8,12 +8,12 @@ const PORT = 8080;
 const app = express();
 
 
-app.get('/1.0/identifiers/:did', async (req, res) => {
+app.get('/1.0/identifiers/:did/:privateKey', async (req, res) => {
     const did = req.params.did;
-    console.log(did);
-    const didResolver = await resolveDID(did);
+    const privateKey = req.params.privateKey;
+    const didResolver = await resolveDID(did, privateKey);
     if (didResolver)
-        res.send(JSON.parse(didResolver));
+        res.send(JSON.parse(didResolver.data));
     else
         res.sendStatus(404)
 });

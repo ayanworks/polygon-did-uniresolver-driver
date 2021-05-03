@@ -1,6 +1,6 @@
 {
     "name": "polygon-did-driver",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "main": "js/index.js",
     "license": "MIT",
     "private": false,
@@ -17,7 +17,7 @@
     "dependencies": {
         "did-resolver": "^1.1.0",
         "express": "^4.16.4",
-        "polygon-did-resolver": "1.0.0"
+        "@ayanworks/polygon-did-resolver": "0.0.3"
     },
     "devDependencies": {
         "@types/express": "^4.17.2",
