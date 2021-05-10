@@ -25,7 +25,13 @@ Command to run docker container with using this image:
 docker run -p 8080:8080 ayanworks/driver-did-polygon:1.0
 ```
 
-Request to resolve DID 
+Request to resolve DID for Test net 
+
+```
+curl -X GET http://localhost:8080/1.0/identifiers/did:polygon:testnet:0x88f8ce435611f27bc89525b47fc147632bbdadac
+```
+
+Request to resolve DID for Main net 
 
 ```
 curl -X GET http://localhost:8080/1.0/identifiers/did:polygon:0x88f8ce435611f27bc89525b47fc147632bbdadac
