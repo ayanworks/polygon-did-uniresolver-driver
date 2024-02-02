@@ -1,10 +1,11 @@
-FROM node:12.16.1
+FROM node:18-alpine
 
 # Create Directory for the Container
 WORKDIR /usr/src/app
 
 # Only copy the package.json and yarn.lock to work directory
 COPY package.json .
+COPY yarn.lock .
 
 # Install all Packages
 RUN yarn install
@@ -13,5 +14,6 @@ RUN yarn install
 ADD . /usr/src/app
 RUN yarn build
 
-CMD [ "yarn", "server" ]
 EXPOSE 8080
+
+CMD [ "yarn", "start" ]
